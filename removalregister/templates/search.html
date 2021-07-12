@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{#<form method='GET'>#}
+{#  <input type='text' name='q' value='{{ request.GET.q }}'>#}
+{#  <input class="button" type='submit' value="Search Removal">#}
+{#</form>#}
+
+
+ {% block search %}
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" autocomplete="off">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Enter chitty no"
+                                aria-label="Search" name="q"     value="{{ request.GET.q }}" aria-describedby="basic-addon2">
+
+                                <button class="btn btn-primary btn-lg" type="submit">
+                                   Search
+                                </button>
+
+                        </div>
+                    </form>
+            {% endblock %}
+
+{%  block content %}
+<h2>Removal</h2>
+
+     <div class="card shadow mb-4">
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl No</th>
+                                            <th>Chitty Name</th>
+                                            <th>Chittal Number</th>
+                                            <th>Chittal Name </th>
+                                            <th>Removal Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Sl No</th>
+                                            <th>Chitty Name</th>
+                                            <th>Chittal Number</th>
+                                            <th>Chittal Name </th>
+                                            <th>Removal Date</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+                         {% for removal in object_list %}
+
+
+                                        <tr>
+                                          <td>{{ forloop.counter }}</td>
+                                            <td><a class="">{{ removal.chittyName }}</a></td>
+                                            <td><a class="btn btn-danger btn-circle btn-lg">{{ removal.chittalNo }}</a></td>
+                                            <td>{{ removal.chittalName}}</td>
+                                            <td>{{ removal.removalDate}}</td>
+
+                                        </tr>
+                                    {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock %}

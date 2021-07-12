@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+ {% block content %}
+  <div class="col-lg-6">
+
+                            <div class="card position-relative">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Add removal </h6>
+                                </div>
+                                <div class="card-body">
+                                        <form class="user" method="post" autocomplete="off">
+                                        {%  csrf_token %}
+                                <div class="form-group">
+                                    <label> Chitty Name</label>
+                                    <input type="text" class="form-control form-control" name="chittyName"  placeholder="chitty Name">
+                                </div>
+
+                                            <div class="form-group">
+                                                 <label> Chittal Name</label>
+                                    <input type="text" class="form-control form-control"  name="chittalName" placeholder="chittal Name">
+                                </div>
+
+                                           <div class="form-group">
+                                                <label> Chittal No</label>
+                                    <input type="number" class="form-control form-control"  name="chittalNo" placeholder="chittal Number">
+                                </div>
+
+                                            <div class="form-group">
+                                                <label> Removal Date </label>
+                                    <input type="text" class="form-control form-control" id="datepicker" name="removalDate" placeholder="Removal  date">
+                                </div>
+
+                                <button class="btn btn-primary  btn-block" type="submit">
+                                    Add
+                                </button>
+
+                            </form>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+{% endblock %}

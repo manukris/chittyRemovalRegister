@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+ {% block content %}
+  <div class="col-lg-6">
+
+                            <div class="card position-relative">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Edit removal entry</h6>
+                                </div>
+                                <div class="card-body">
+                                        <form class="user" method="post" autocomplete="off">
+                                        {%  csrf_token %}
+                                <div class="form-group">
+                                    <label> Chitty Name</label>
+                                    <input type="text" class="form-control form-control" name="chittyName"  value="{{ object.chittyName }}">
+                                </div>
+
+                                            <div class="form-group">
+                                                 <label> Chittal Name</label>
+                                    <input type="text" class="form-control form-control"  name="chittalName" value="{{ object.chittalName }}">
+                                </div>
+
+                                           <div class="form-group">
+                                                <label> Chittal No</label>
+                                    <input type="number" class="form-control form-control"  name="chittalNo" value="{{ object.chittalNo }}">
+                                </div>
+
+                                            <div class="form-group">
+                                                <label> Removal Date </label>
+                                    <input type="text" class="form-control form-control" id="datepicker" name="removalDate" value="{{ object.removalDate }}">
+                                </div>
+
+                                <button class="btn btn-primary  btn-block" type="submit">
+                                    Edit Account
+                                </button>
+
+                            </form>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+{% endblock %}
